@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!--pjax：防止跳转页面音乐暂停-->
+ <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunjunge08.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#836FFF","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"all.xml"};
+  </script>
+
+  <meta name="description" content="导语这篇文章将从各个方面入手，讲解常见的 Internet 下载方式以及对应的下载器。此外还会介绍一些特殊信息的下载方式。 1. 下载方式在互联网上，我们经常需要下载一些信息和文件。为了下载到它们，我们首先要获取它们的下载地址。其中，最常见的就是 HTTPS 地址。此外，还有各种其它的文件分享方式，例如 BitTorrent 和 Magnet 等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Internet主要下载方式及下载器介绍">
+<meta property="og:url" content="https://sunjunge08.github.io/2022/05/15/Internet%E4%B8%BB%E8%A6%81%E4%B8%8B%E8%BD%BD%E6%96%B9%E5%BC%8F%E5%8F%8A%E4%B8%8B%E8%BD%BD%E5%99%A8%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="孙君阁的博客">
+<meta property="og:description" content="导语这篇文章将从各个方面入手，讲解常见的 Internet 下载方式以及对应的下载器。此外还会介绍一些特殊信息的下载方式。 1. 下载方式在互联网上，我们经常需要下载一些信息和文件。为了下载到它们，我们首先要获取它们的下载地址。其中，最常见的就是 HTTPS 地址。此外，还有各种其它的文件分享方式，例如 BitTorrent 和 Magnet 等。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sunjunge08.github.io/images/20220515/Image01.png">
+<meta property="og:image" content="https://sunjunge08.github.io/images/20220515/Image02.png">
+<meta property="og:image" content="https://sunjunge08.github.io/images/20220515/Image03.png">
+<meta property="og:image" content="https://sunjunge08.github.io/images/20220515/Image04.png">
+<meta property="og:image" content="https://sunjunge08.github.io/images/20220515/Image05.png">
+<meta property="og:image" content="https://sunjunge08.github.io/images/20220515/Image06.png">
+<meta property="og:image" content="https://sunjunge08.github.io/images/20220515/Image07.png">
+<meta property="og:image" content="https://sunjunge08.github.io/images/20220515/Image08.png">
+<meta property="article:published_time" content="2022-05-15T15:59:56.000Z">
+<meta property="article:modified_time" content="2023-02-09T06:10:15.858Z">
+<meta property="article:author" content="孙君阁">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sunjunge08.github.io/images/20220515/Image01.png">
+
+<link rel="canonical" href="https://sunjunge08.github.io/2022/05/15/Internet%E4%B8%BB%E8%A6%81%E4%B8%8B%E8%BD%BD%E6%96%B9%E5%BC%8F%E5%8F%8A%E4%B8%8B%E8%BD%BD%E5%99%A8%E4%BB%8B%E7%BB%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Internet主要下载方式及下载器介绍 | 孙君阁的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">孙君阁的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Kinopico</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/SunJunge08" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sunjunge08.github.io/2022/05/15/Internet%E4%B8%BB%E8%A6%81%E4%B8%8B%E8%BD%BD%E6%96%B9%E5%BC%8F%E5%8F%8A%E4%B8%8B%E8%BD%BD%E5%99%A8%E4%BB%8B%E7%BB%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="孙君阁">
+      <meta itemprop="description" content="孙君阁的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙君阁的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Internet主要下载方式及下载器介绍
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-5-15 23:59:56" itemprop="dateCreated datePublished" datetime="2022-05-15T23:59:56+08:00">2022-5-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-2-9 14:10:15" itemprop="dateModified" datetime="2023-02-09T14:10:15+08:00">2023-2-9</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h1><p>这篇文章将从各个方面入手，讲解常见的 Internet 下载方式以及对应的下载器。此外还会介绍一些特殊信息的下载方式。</p>
+<h1 id="1-下载方式"><a href="#1-下载方式" class="headerlink" title="1. 下载方式"></a>1. 下载方式</h1><p>在互联网上，我们经常需要下载一些信息和文件。为了下载到它们，我们首先要获取它们的下载地址。其中，最常见的就是 HTTPS 地址。此外，还有各种其它的文件分享方式，例如 BitTorrent 和 Magnet 等。</p>
+<span id="more"></span>
+<h2 id="1-1-HTTP-和-HTTPS"><a href="#1-1-HTTP-和-HTTPS" class="headerlink" title="1.1 HTTP 和 HTTPS"></a>1.1 HTTP 和 HTTPS</h2><h3 id="1-1-1-HTTP"><a href="#1-1-1-HTTP" class="headerlink" title="1.1.1 HTTP"></a>1.1.1 HTTP</h3><p><strong>超文本传输协议</strong>（英语：<strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol，缩写：<strong>HTTP</strong>）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<p>设计 HTTP 最初的目的是为了提供一种发布和接收 HTML 页面的方法。通过 HTTP 或者 HTTPS 协议请求的资源由统一资源标识符（Uniform Resource Identifiers，URI）来标识。</p>
+<p>HTTP 的发展是由蒂姆·伯纳斯-李于1989年在欧洲核子研究组织（CERN）所发起。HTTP 的标准制定由万维网协会（World Wide Web Consortium，W3C）和互联网工程任务组（Internet Engineering Task Force，IETF）进行协调，最终发布了一系列的 RFC，其中最著名的是1999年6月公布的 RFC 2616，定义了 HTTP 协议中现今广泛使用的一个版本—— HTTP 1.1。</p>
+<p>2014年12月，互联网工程任务组（IETF）的 Hypertext Transfer Protocol Bis（httpbis）工作小组将 HTTP/2 标准提议递交至 IESG 进行讨论，于2015年2月17日被批准。HTTP/2 标准于2015年5月以 RFC 7540 正式发表，取代 HTTP 1.1 成为 HTTP 的实现标准。</p>
+<p><strong>举例：<a target="_blank" rel="noopener" href="http://example.com/">http://example.com/</a></strong></p>
+<h3 id="1-1-2-HTTPS"><a href="#1-1-2-HTTPS" class="headerlink" title="1.1.2 HTTPS"></a>1.1.2 HTTPS</h3><p><strong>超文本传输安全协议</strong>（英语：<strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol <strong>S</strong>ecure，缩写：<strong>HTTPS</strong>；常称为 HTTP over TLS 、HTTP over SSL 或 HTTP Secure）是一种通过计算机网络进行安全通信的传输协议。HTTPS 经由 HTTP 进行通信，但利用 SSL/TLS 来加密数据包。HTTPS 开发的主要目的，是提供对网站服务器的身份认证，保护交换资料的隐私与完整性。这个协议由网景公司（Netscape）在1994年首次提出，随后扩展到互联网上。<sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
+<p>历史上，HTTPS 连接经常用于万维网上的交易支付和企业信息系统中敏感信息的传输。在2000年代末至2010年代初，HTTPS 开始广泛使用，以确保各类型的网页真实，保护账户和保持用户通信，身份和网络浏览的私密性。</p>
+<p>另外，还有一种安全超文本传输协议（S-HTTP）的 HTTP 安全传输实现，但是 HTTPS 的广泛应用而成为事实上的 HTTP 安全传输实现，S-HTTP 并没有得到广泛支持。</p>
+<p><strong>举例：<a href="https://sunjunge08.github.io/">https://sunjunge08.github.io/</a></strong></p>
+<h2 id="1-2-BitTorrent"><a href="#1-2-BitTorrent" class="headerlink" title="1.2 BitTorrent"></a>1.2 BitTorrent</h2><p><strong>BitTorrent 协议</strong>（简称 <strong>BT</strong>，俗称<strong>比特洪流</strong>、<strong>BT 下载</strong>）是用在对等网络中文件分享的网络协议程序。和点对点（point-to-point）的协议程序不同，它是用户群对用户群（peer-to-peer），而且用户越多，下载同一文件的人越多，下载该文件的速度越快。且下载后，继续维持上传的状态，就可以“分享”，成为其用户端节点下载的种子文件（.torrent），同时上传及下载。<sup><a href="#fn_3" id="reffn_3">3</a></sup></p>
+<p><strong>举例：<a href="/download/20220515/Life Stinks.torrent">Life Stinks.torrent</a></strong></p>
+<h2 id="1-3-Magnet"><a href="#1-3-Magnet" class="headerlink" title="1.3 Magnet"></a>1.3 Magnet</h2><p><strong>磁力链接</strong>（Magnet URI scheme），是对等网络中进行信息检索和下载文档的电脑程序。和基于“位置”连接的统一资源定位符不同，磁力链接是基于元数据（metadata）文件内容，属于统一资源名称。也就是说，磁力链接不基于文档的 IP 地址或定位符，而是在分布式数据库中，通过散列函数值来识别、搜索来下载文档。因为不依赖一个处于启动状态的主机来下载文档，所以特别适用没有中心服务器的对等网络。尽管它符合开源标准，却被垄断信息资源和监控用户行为的个人、组织、企业和政府拒之门外。<sup><a href="#fn_4" id="reffn_4">4</a></sup></p>
+<p><strong>举例：<a href="magnet:?xt=urn:btih:77786833D9B722F41C886449DD8BEA626D321E41">magnet:?xt=urn:btih:77786833D9B722F41C886449DD8BEA626D321E41</a></strong></p>
+<h1 id="2-下载器"><a href="#2-下载器" class="headerlink" title="2. 下载器"></a>2. 下载器</h1><p>对于上述几种下载方式，我们需要使用不同的下载器来下载它们。下面是几个典型的例子。</p>
+<h2 id="2-1-IDM-FDM-NDM"><a href="#2-1-IDM-FDM-NDM" class="headerlink" title="2.1 IDM / FDM / NDM"></a>2.1 IDM / FDM / NDM</h2><p>这三种下载器都是 HTTP(S) 下载器，FDM 有下载 BT 资源的功能，但是并不是很推荐。</p>
+<h3 id="2-1-1-IDM"><a href="#2-1-1-IDM" class="headerlink" title="2.1.1 IDM"></a>2.1.1 IDM</h3><h4 id="2-1-1-1-介绍"><a href="#2-1-1-1-介绍" class="headerlink" title="2.1.1.1 介绍"></a>2.1.1.1 介绍</h4><p><strong>Internet Download Manager</strong>（简称 <strong>IDM</strong>）是一个用于 Windows 系统的下载管理器。<sup><a href="#fn_5" id="reffn_5">5</a></sup></p>
+<p>IDM 可以让用户自动下载某些类型的文件，可将文件划分为多个下载点以更快下载，并行出最近的下载，方便访问文件。相对于其他下载管理器，具有独特的动态文件分割技术。其优点在于，能分析下载地址中的实际地址，但若地址无效时则跳换成失效网页，当地址重新有效而无法恢复成原来的地址。而缺点在于，必须设置分段的临时文件存放的磁盘位置，下载完成后再自动合并成一个完整的文件，同时删除临时文件（这种做法不同于其他下载软件预先分配一整块磁盘空间）。所以，下载的如果是机密文件，就容易被数据恢复软件恢复，造成安全隐患。IDM可被调用于 Internet Explorer、Safari、Google Chrome、Opera、Netscape Navigator 以及 Mozilla Firefox（火狐）浏览器中。</p>
+<p>相对于其它下载管理工具，它具有独特的动态档案分区技术。它的出色之处在于，它能分析下载地址中的实际地址，但若地址无效时则跳换成失效网页，当地址重新有效可自动下载完成。聪明的 in-speed 技术会动态地将所有设定应用到某种联机类型，以充分利用下载速度。<sup><a href="#fn_6" id="reffn_6">6</a></sup></p>
+<p><strong>官方网站：<a target="_blank" rel="noopener" href="https://www.internetdownloadmanager.cn/">https://www.internetdownloadmanager.cn/</a></strong></p>
+<h4 id="2-1-1-2-使用方法"><a href="#2-1-1-2-使用方法" class="headerlink" title="2.1.1.2 使用方法"></a>2.1.1.2 使用方法</h4><p>在 IDM 的官方网站上，你可以看到：IDM 是一个收费软件，不过有30天的免费试用期。</p>
+<p><img data-src="/images/20220515/Image01.png" alt="Image01.png" title="选 择 你 的 英 雄"></p>
+<p>这里提供一个破解版，是由俄罗斯大神 <a target="_blank" rel="noopener" href="https://lrepacks.net/user/elchupacabra/">elchupacabra</a> 在知名软件破解论坛 <a target="_blank" rel="noopener" href="https://lrepacks.net/">Lrepacks</a> 上发布的。这个版本目前没有什么问题，能够正常使用，这里是：<a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/newtag11/inet_download_manager_6.40.11.zip">下载地址</a>。<sup><a href="#fn_7" id="reffn_7">7</a></sup></p>
+<p>以前，由于 IDM 官方打击破解和盗版，对大部分的 IDM 破解版本都做出了弹窗提示，迫使破解用户换正版。这一举动引起了很大的讨论，当时有两个方法解决这一问题：一是换成较低版本的 IDM 破解版，没有弹窗；二是用弹窗拦截和浏览器脚本来关掉它。但这两种方式都挺麻烦的。后来这个弹窗终于被俄罗斯大神给去掉了，也就是上面的 <code>v6.40.11</code> 版。</p>
+<p>安装完毕后，在 View-&gt;Language 中设置语言为简体中文。如果 IDM 没有自动安装浏览器集成（初次下载一般都会安装，但是后续更新有时就不会），可以在其安装目录中找到相应的 <code>.crx</code> 文件进行安装。</p>
+<h4 id="2-1-1-3-常用功能"><a href="#2-1-1-3-常用功能" class="headerlink" title="2.1.1.3 常用功能"></a>2.1.1.3 常用功能</h4><p>IDM 之所以强大，不仅是因为其下载速度快，还因为它有很多实用功能。这是很多下载器和浏览器所没有的。这里来介绍一下。</p>
+<p>在 IDM 的“帮助”选项中，可以看到有“帮助内容”“教程””计划任务及下载队列”“站点抓取帮助”这四个选项。你可以点击它们，然后在 IDM 官网上下载到 IDM 的帮助文件，并从中学习 IDM 的更多使用方法。</p>
+<p><img data-src="/images/20220515/Image02.png" alt="Image02.png" title="帮助手册"></p>
+<p>此外，还可以在 <a target="_blank" rel="noopener" href="https://www.internetdownloadmanager.cn/blog">Internet Download Manager 中文博客</a>、<a target="_blank" rel="noopener" href="https://www.internetdownloadmanager.cn/idm/category/syjq">使用技巧</a>、<a target="_blank" rel="noopener" href="https://www.internetdownloadmanager.cn/idm/category/cjwt">常见问题</a>、<a target="_blank" rel="noopener" href="https://www.internetdownloadmanager.cn/idm/category/news">新闻资讯</a> 这几个页面中了解更多关于 IDM 的使用方法和技巧。</p>
+<h3 id="2-1-2-FDM"><a href="#2-1-2-FDM" class="headerlink" title="2.1.2 FDM"></a>2.1.2 FDM</h3><h4 id="2-1-2-1-介绍"><a href="#2-1-2-1-介绍" class="headerlink" title="2.1.2.1 介绍"></a>2.1.2.1 介绍</h4><p><strong>Free Download Manager</strong>（简称 <strong>FDM</strong>）是一款跨平台的下载管理器。<sup><a href="#fn_8" id="reffn_8">8</a></sup></p>
+<p>FDM 最初是专有软件，但随着 2.5 版发布成为自由软件。从 3.0.850 版（2010年4月15日）开始，源代码不再打包提供下载，但可以从项目的 Subversion 资源库获取，从 3.9.x 及以后版本不再提供源代码（不再开源，5.0 版本以后移除 GNU 自由软件协议）。Free Download Manager 荣获2007年 Webuser 金奖。</p>
+<p><strong>官方网站：<a target="_blank" rel="noopener" href="https://www.freedownloadmanager.org/zh/">https://www.freedownloadmanager.org/zh/</a></strong></p>
+<h4 id="2-1-2-2-不足之处"><a href="#2-1-2-2-不足之处" class="headerlink" title="2.1.2.2 不足之处"></a>2.1.2.2 不足之处</h4><p>在 IDM 开始弹窗警告的时候，我决定弃用 IDM 转为 FDM，因而 FDM 成为了我那时下载文件的主力。但是，后来我发现了它的一个很大的问题：<strong>无法自定义 User-Agent</strong>。这也就意味着，我无法下载百度网盘的文件了（见 3.2.3）。这可不行！后来我实在忍不下去了，就换成了 NDM，可没想到 NDM 也有很多问题，具体我会在 2.1.3.2 部分详细说明。</p>
+<h3 id="2-1-3-NDM"><a href="#2-1-3-NDM" class="headerlink" title="2.1.3 NDM"></a>2.1.3 NDM</h3><h4 id="2-1-3-1-介绍"><a href="#2-1-3-1-介绍" class="headerlink" title="2.1.3.1 介绍"></a>2.1.3.1 介绍</h4><p><strong>Neat Download Manager</strong>（简称 <strong>NDM</strong>）是一款轻量级免费下载工具，也是 macOS 和 Windows 的免费下载管理器和加速器，可使用动态分段算法下载文件。它支持 HTTP，HTTPS 和 FTP 协议，HTTP 代理和 SOCKS 协议，HTTP 和代理认证，暂停/继续功能以及过期下载的自动续订。它具有浏览器扩展，用于捕获下载链接和从许多网站下载视频/音频。免费下载整洁的下载管理器。<sup><a href="#fn_9" id="reffn_9">9</a></sup></p>
+<p>Neat Download Manager 是一个可靠的应用程序，与其他类似的下载应用程序相比，它可以为您提供快速安全的下载速度。它能够与 Safari，Google 和 Opera 等不同的搜索引擎进行协作，并为您提供管理和保存声音和电影格式的不同文件的功能。即使您正在下载文件，它也使您可以为下载设置带宽限制。该程序支持拖放功能，并且与所有类型的流行网络浏览器兼容，包括 Google，Yahoo，Mozilla Firefox，Chrome，Opera 等。该程序还支持批处理，使您可以同时下载多个文件而不会降低速度。</p>
+<p><strong>官方网站：<a target="_blank" rel="noopener" href="http://www.neatdownloadmanager.com/index.php/en/">http://www.neatdownloadmanager.com/index.php/en/</a></strong></p>
+<h4 id="2-1-3-2-不足之处"><a href="#2-1-3-2-不足之处" class="headerlink" title="2.1.3.2 不足之处"></a>2.1.3.2 不足之处</h4><p>前面讲到，我弃用了 FDM 转为了 NDM，但是不久我就发现它有两个问题：</p>
+<p><strong>没有中文版本。</strong>这个下载器比较小众，甚至在 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/">维基百科 / Wikipedia</a> 上都没有对它的介绍。而且其网站做的也挺简陋，没有太多内容。经过很长时间的搜寻，我也没找到它的中文版。直到后来，我在一个个人网站 <a target="_blank" rel="noopener" href="http://www.dayanzai.me/">大眼仔旭</a> 上找到了由此网站的站长汉化的软件。下载下来一看，质量非常高。于是，这第一个问题就解决掉了。</p>
+<p><strong>经常报错，无法下载某些链接。</strong>有一次，我用 <a target="_blank" rel="noopener" href="https://www.bilibili.com">B站</a> 的一个油猴脚本 <a target="_blank" rel="noopener" href="https://github.com/the1812/Bilibili-Evolved/">Bilibili-Evolved</a> 下载视频时，发现 NDM 弹窗报错了。</p>
+<p><img data-src="/images/20220515/Image03.png" alt="Image03.png" title="HTTP/1.1 403 Forbidden"></p>
+<p>就像这样，而且在下载 <font color=#ff9900>Pxxnhub</font> 的视频时也出现了此类情况。这个问题我就百思不得其解了。于是我到 Bilibili-Evolved 的 Discussion 页面发起了一个讨论<sup><a href="#fn_10" id="reffn_10">10</a></sup>，希望那里会有大神帮忙解决。然而，如你所见，并没有人知道报错的原因。直到现在，此问题仍尚未解决。</p>
+<p>于是，我就又放弃了 NDM，恰巧此时 IDM 的无弹窗版本发布了，我重新换回 IDM，再也没有出现过什么问题。</p>
+<h3 id="2-1-4-三种下载器的比较"><a href="#2-1-4-三种下载器的比较" class="headerlink" title="2.1.4 三种下载器的比较"></a>2.1.4 三种下载器的比较</h3><p>已经有人将它们做了对比和测试，文章地址是：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA5NjEwNjE0OQ==&amp;mid=2247506862&amp;idx=1&amp;sn=3399d9adc417345bdbaab005863fb21f&amp;chksm=90b7b864a7c03172ad6ef9ad5f8adb8d5aea3f336a4e33936b562239033c7d377e806b6fb8bd&amp;scene=4">《同比 6 款热门下载器，IDM 还是最好用的那个吗？》</a>。</p>
+<p>这里直接给出我的结论：<strong>（1）IDM 最好用。无论是下载速度和稳定程度，FDM 和 NDM 都没法与其相比。</strong>（2）IDM 没有什么大问题，就是不定时地会受到官方的弹窗提示。不过这都是小问题，总会有破解大神解决的。（3）FDM 的速度很不稳定，忽高忽低，经常调回 1KB/s ，就很难受。（4）FDM 和 NDM 都有不能下载的情况，上面也说过了，所以不推荐这两个。</p>
+<h2 id="2-2-BitComet"><a href="#2-2-BitComet" class="headerlink" title="2.2 BitComet"></a>2.2 BitComet</h2><h3 id="2-2-1-介绍"><a href="#2-2-1-介绍" class="headerlink" title="2.2.1 介绍"></a>2.2.1 介绍</h3><p><strong>比特彗星</strong>（<strong>BitComet</strong>，缩写：BC）是一个用 C++ 语言为 Microsoft Windows 平台编写的 BitTorrent 客户端软件，也可用于 HTTP/FTP 下载，并可选装“ eMule 插件”通过电驴网络进行 BitTorrent / 电驴 同时下载。<sup><a href="#fn_11" id="reffn_11">11</a></sup></p>
+<p>官方给出的特点是这样的<sup><a href="#fn_12" id="reffn_12">12</a></sup>：</p>
+<blockquote>
+<p>BT 下载<strong>高速而且功能强大</strong>。<br><strong>长效种子:</strong> <a target="_blank" rel="noopener" href="http://wiki-zh.bitcomet.com/长效种子">独有的长效种子功能，能显著增加下载速度</a> (0.93新功能)。<br><strong>支持磁链:</strong> 使用 DHT 网络，<a target="_blank" rel="noopener" href="http://wiki-zh.bitcomet.com/完整列表#什么是magnet_uri_磁链">无需 Torrent 文件即可进行 BT 下载</a>。<br><strong>边下载边播放:</strong> 支持视频预览，<a target="_blank" rel="noopener" href="http://wiki-zh.bitcomet.com/视频预览">在下载 avi, rmvb, wmv 等视频文件过程中可以边下载边播放</a>。<br><strong>跨协议下载:</strong> BT 任务可以自动查找 HTTP / FTP / EMULE 下载源，提高下载速度。<br><strong>文件分块对齐:</strong> <a target="_blank" rel="noopener" href="http://wiki-zh.bitcomet.com/分块对齐">创新的文件分块对齐制作种子，兼容旧版而且不增加任何冗余数据传输</a>。<br><strong>智能连接优化:</strong> 自动根据您的网络连接优化下载。<br><strong>智能磁盘缓存:</strong> <a target="_blank" rel="noopener" href="http://wiki-zh.bitcomet.com/bitcomet全局选项#磁盘缓存">使用内存作下载缓存, 有效减小硬盘读写速度, 延长其使用寿命</a>。<br><strong>智能磁盘分配:</strong> <a target="_blank" rel="noopener" href="http://wiki-zh.bitcomet.com/智能磁盘分配">有效减少磁盘碎片产生</a>。<br><strong>支持 DHT 网络:</strong> <a target="_blank" rel="noopener" href="http://wiki-zh.bitcomet.com/使用dht_tracker">通过公用 DHT 网络，无需连接 Tracker 也能进行 BT 下载。</a><br>自动配置防火墙，支持全自动配置 Windows 网络连接防火墙（ICF）和网络连接共享（ICS）。<br>自动配置路由器端口映射，采用 UPnP 技术实现内网免配置（要求路由器支持 UPnP）。<br>支持多 Tracker 协议，UTF-8 扩展，UDP Tracker v2 协议。</p>
+</blockquote>
+<p><strong>官方网站：<a target="_blank" rel="noopener" href="http://www.bitcomet.com/cn">http://www.bitcomet.com/cn</a></strong></p>
+<h3 id="2-2-2-使用方法"><a href="#2-2-2-使用方法" class="headerlink" title="2.2.2 使用方法"></a>2.2.2 使用方法</h3><p>这里只介绍下载 BT 和 Magnet 资源的方式。为了提高下载速度，我们需要配置 Trackers，而一个项目 <a target="_blank" rel="noopener" href="https://trackerslist.com/#/zh">TrackersListCollection</a> 就正好收录了网上热门的 Trackers 列表。配置方法如下<sup><a href="#fn_13" id="reffn_13">13</a></sup>：</p>
+<p><img data-src="/images/20220515/Image04.png" alt="Image04.png" title="配置 Trackers"></p>
+<h2 id="2-3-Aria2"><a href="#2-3-Aria2" class="headerlink" title="2.3 Aria2"></a>2.3 Aria2</h2><h3 id="2-3-1-Aria2"><a href="#2-3-1-Aria2" class="headerlink" title="2.3.1 Aria2"></a>2.3.1 Aria2</h3><p>Aria2 是一款自由、跨平台命令行界面的下载管理器，该软件根据 GPLv2 许可证进行分发。支持的下载协议有：HTTP、HTTPS、FTP、BitTorrent 和 Metalink。<sup><a href="#fn_14" id="reffn_14">14</a></sup></p>
+<p><strong>官方网站：<a target="_blank" rel="noopener" href="https://aria2.github.io/">https://aria2.github.io/</a></strong></p>
+<h3 id="2-3-2-AriaNG-GUI"><a href="#2-3-2-AriaNG-GUI" class="headerlink" title="2.3.2 AriaNG GUI"></a>2.3.2 AriaNG GUI</h3><p>Aria2 本身是一个命令行工具，并没有图形化界面，因此想要使用就必须敲代码。但这实在是太麻烦了，对不懂程序的人很不友好。于是，有人制作了一个图形化工具，完美包含了 Aria2 的各种功能，叫做 <a target="_blank" rel="noopener" href="http://ariang.mayswind.net/zh_Hans/">AriaNG</a>，它是一个让 Aria2 更容易使用的现代 Web 前端。AriaNg 使用纯 HTML &amp; JavaScript 开发，所以其不需要任何编译器或运行环境。您只要将 AriaNg 放在您的 Web 服务器里并在浏览器中打开即可使用。AriaNg 使用响应式布局，支持各种计算机或移动设备。<sup><a href="#fn_15" id="reffn_15">15</a></sup></p>
+<p><strong>AriaNG 的发布地址为：<a target="_blank" rel="noopener" href="https://github.com/mayswind/AriaNg/releases">https://github.com/mayswind/AriaNg/releases</a></strong></p>
+<p>但是，AriaNG 只能在浏览器中使用，比较不方便。因此，又有人制作了一个 Aria2 图形界面<strong>客户端</strong>，叫做 <a target="_blank" rel="noopener" href="https://aria-ng.xmader.com/">AriaNG GUI</a>，它有如下特性<sup><a href="#fn_16" id="reffn_16">16</a></sup>：</p>
+<blockquote>
+<ul>
+<li>集成 Aria2c（默认 Aria2 RPC：<code>http://localhost:6800</code>）</li>
+<li>多线程下载</li>
+<li>未完成任务退出自动保存</li>
+<li>支持 PT/BT</li>
+<li>下载完成消息通知</li>
+<li>多语言支持</li>
+<li>支持配置多个 Aria2 RPC</li>
+<li>支持打开下载文件夹, 在文件管理器中显示已下载的文件（仅限使用内置的 Aria2 RPC）</li>
+<li>使用响应式布局，支持各种计算机或移动设备</li>
+<li>友好的界面交互<ul>
+<li>任务排序（按文件名，文件大小，进度，剩余时间，下载速度等），文件排序，连接节点排序</li>
+<li>任务搜索</li>
+<li>拖拽调整下载顺序</li>
+<li>更详细的任务信息（健康度，连接节点客户端信息等）</li>
+<li>根据文件类型过滤任务中的文件（按视频，音频，图片，文档，应用程序，存档文件等）</li>
+<li>全局以及单任务的上传/下载速度图表</li>
+<li>完整支持 Aria2 设置选项</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>AriaNG GUI 可以当做一个独立客户端来使用，不依赖浏览器，而且与 AriaNG 的功能完全一致，方便快捷。</p>
+<p><strong>AriaNG GUI 的发布地址为：<a target="_blank" rel="noopener" href="https://github.com/mayswind/AriaNg/releases">https://github.com/mayswind/AriaNg/releases</a></strong></p>
+<h1 id="3-特殊下载"><a href="#3-特殊下载" class="headerlink" title="3. 特殊下载"></a>3. 特殊下载</h1><p>当然，只有上述下载方式是远远不够的，某些资源不是想要下载就可以下载的，有时还会受到版权、服务器带宽以及其他各种因素的影响。在这一部分，我将具体说明各种资源的获取方式。<strong>如果不做特殊说明，下面获得的下载地址都可以用上文提到的下载器进行下载。</strong></p>
+<h2 id="3-1-影视资源"><a href="#3-1-影视资源" class="headerlink" title="3.1 影视资源"></a>3.1 影视资源</h2><p>日常生活中，最常见的一类资源就是影视资源（包括但不限于电影、电视剧、动漫、纪录片以及音乐等），这类资源一般是“可以观看而无法下载”。下面是这类资源的下载方式。</p>
+<h3 id="3-1-1-各大视频网站"><a href="#3-1-1-各大视频网站" class="headerlink" title="3.1.1 各大视频网站"></a>3.1.1 各大视频网站</h3><p>目前，国内的视频网站主要有爱优腾和B站（国外的视频网站这里暂且不提，将会在3.3部分说明），它们都可以用同一种办法进行下载，那就是使用油猴脚本。</p>
+<h4 id="3-1-1-1-Tampermonkey-和-Greasy-Fork"><a href="#3-1-1-1-Tampermonkey-和-Greasy-Fork" class="headerlink" title="3.1.1.1 Tampermonkey 和 Greasy Fork"></a>3.1.1.1 Tampermonkey 和 Greasy Fork</h4><p>首先，建议使用 Edge 浏览器或 Firefox 浏览器安装以下这些扩展。选择它们的原因有两个：（1）都属于主流的浏览器，不像国产的 360 和 QQ 浏览器等那么垃圾。（2）都可以在国内的网络环境下下载扩展，如果使用 Chrome 的话，还得开个梯子，实在太麻烦了。</p>
+<p>接下来，介绍一下 Tampermonkey。Tampermonkey 是最受欢迎的用户脚本管理器，用户数量超过一千万，支持 Chrome，Microsoft Edge，Safari，Opera Next 和 Firefox 等浏览器。<sup><a href="#fn_17" id="reffn_17">17</a></sup></p>
+<p><strong>Tampermonkey 的安装地址：<a target="_blank" rel="noopener" href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd">Edge</a> / <a target="_blank" rel="noopener" href="https://addons.mozilla.org/zh-CN/firefox/addon/tampermonkey/">Firefox</a></strong></p>
+<p>既然 Tampermonkey 是管理脚本的，那么就还需要有脚本的来源。Greasy Fork 就是这样的一个提供脚本的网站。其中的脚本可以大大增强网页的使用体验。下面是部分脚本的截图：</p>
+<p><img data-src="/images/20220515/Image05.png" alt="Image05.png" title="部分脚本的截图"></p>
+<p><strong>Greasy Fork 的官方网站为：<a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN">https://greasyfork.org/zh-CN</a></strong></p>
+<h4 id="3-1-1-2-懒人脚本"><a href="#3-1-1-2-懒人脚本" class="headerlink" title="3.1.1.2 懒人脚本"></a>3.1.1.2 懒人脚本</h4><p>下面要说的是使用懒人脚本下载视频网站上的视频的方法。</p>
+<p>进入脚本的地址：<a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/370634-%E6%87%92%E4%BA%BA%E4%B8%93%E7%94%A8-%E5%85%A8%E7%BD%91vip%E8%A7%86%E9%A2%91%E5%85%8D%E8%B4%B9%E7%A0%B4%E8%A7%A3%E5%8E%BB%E5%B9%BF%E5%91%8A-%E5%85%A8%E7%BD%91%E9%9F%B3%E4%B9%90%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD-%E7%9F%A5%E4%B9%8E%E5%A2%9E%E5%BC%BA-%E7%9F%AD%E8%A7%86%E9%A2%91%E6%97%A0%E6%B0%B4%E5%8D%B0%E4%B8%8B%E8%BD%BD-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E7%AD%89%E5%A4%9A%E5%8A%9F%E8%83%BD%E5%B7%A5%E5%85%B7%E7%AE%B1-%E5%8A%9F%E8%83%BD%E5%8F%AF%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%85%B3-%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0-%E6%94%BE%E5%BF%83%E4%BD%BF%E7%94%A8-v5-4">懒人专用，全网VIP视频免费破解去广告……</a>，然后安装此脚本。</p>
+<p>我们就以电影<a target="_blank" rel="noopener" href="https://v.youku.com/v_show/id_XNTg2Mzg1NTI0MA==.html">《长津湖之水门桥》</a>为例，可以看到，这部电影目前是“会员专享”，正常只能看六分钟。但是打开此脚本，选择一个解析地址后，就可以不受任何限制地观看了。</p>
+<p><img data-src="/images/20220515/Image06.png" alt="Image06.png" title="Before VS After"></p>
+<p>安装 IDM 扩展后，我们还可以直接点击右上方的“下载该视频”。可以看到，使用 IDM 的速度还是很快的。</p>
+<p><img data-src="/images/20220515/Image07.png" alt="Image07.png" title="用 IDM 下载电影"></p>
+<p>其它视频网站的视频下载方法都大同小异，只要耐心地找到一个可用的解析地址即可。</p>
+<h4 id="3-1-1-3-Bilibili-Evolved"><a href="#3-1-1-3-Bilibili-Evolved" class="headerlink" title="3.1.1.3 Bilibili-Evolved"></a>3.1.1.3 Bilibili-Evolved</h4><p>对于 B 站的视频，还有一种方法可以下载，那就是使用脚本 Bilibili-Evolved。Bilibili-Evolved 曾经也在 Greasy Fork 上发布并更新，但是后来突然无法安装。于是我到 Bilibili-Evolved 的 GitHub Issues 中询问<sup><a href="#fn_18" id="reffn_18">18</a></sup>，得到的回复是：“自 v1.10.14 版后, 脚本的大小超出了 Greasy Fork 规定的最大脚本大小（2000000字符），因此 Greasy Fork 这边只能永远停在 v1.10.12 版了。”</p>
+<p>所以，现在的安装地址应是：<a target="_blank" rel="noopener" href="https://github.com/the1812/Bilibili-Evolved#%E5%AE%89%E8%A3%85">Bilibili Evolved #安装</a>。可以选择正式版和预览版，我用的是正式版。</p>
+<p>安装后打开视频<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1bW411n7fY">《【春晚鬼畜】赵本山：我就是念诗之王！【改革春风吹满地】》</a>，点开左边的功能栏→下载视频。</p>
+<p>选择好参数后，可以选择输出方式。这里推荐三种：</p>
+<blockquote>
+<p>（1）Toast：弹一条消息显示出下载链接，右键新标签页打开就可以下载。链接有 referer 限制，复制无用，且不能保留视频文件名。只能用浏览器自带的下载器下载。</p>
+<p>（2）Aria2 RPC：使用 Aria2 RPC 功能发送下载请求。下面的参数保持默认即可，需要提前打开 AriaNG GUI（见2.3.2部分）。</p>
+<p>（3）IDM：使用 IDM 的 <code>.ef2</code> 格式导出，可以在 IDM 中使用导入开始下载。导入方式为：进入 IDM →任务→导入→从“IDM 导出文件”导入。</p>
+</blockquote>
+<p><img data-src="/images/20220515/Image08.png" alt="Image08.png" title="三种输出方式"></p>
+<p><strong>注意：这种方法与自身账号有关，也就是说，无法下载大会员独享的番剧（账号自身是大会员则可以下载）。</strong></p>
+<!--
+
+### 3.1.2 资源整合站
+
+### 3.1.3 豆瓣电影
+
+## 3.2 百度网盘
+
+### 3.2.1 曾经的下载方式
+
+### 3.2.2 KinhDown
+
+### 3.2.3 油猴脚本
+
+## 3.3 外网资源
+
+### <font color=#ff0202>3.3.1 YouTube</font>
+
+### <font color=#ff9900>3.3.2 Pxxnhub</font>
+
+-->
+<font color = red>**（To be continued...）**</font>
+
+<h1 id="4-说明和总结"><a href="#4-说明和总结" class="headerlink" title="4. 说明和总结"></a>4. 说明和总结</h1><p>这篇文章最开始写于2022年5月，后来由于各种原因<del>（主要是我太鸽了）</del>没有写完，就停留在了 3.1.1.3 部分。以后大概率没时间完成这篇文章力。（悲</p>
+<p align="right">——2022.12.30 注</p>
+
+<h1 id="5-引用资料和脚注"><a href="#5-引用资料和脚注" class="headerlink" title="5. 引用资料和脚注"></a>5. 引用资料和脚注</h1><blockquote id="fn_1">
+<sup>1</sup>. 节选自 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">超文本传输协议</a> 维基百科<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. 节选自 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE">超文本传输安全协议</a> 维基百科<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. 节选自 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/BitTorrent">BitTorrent</a> 维基百科<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. 节选自 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A3%81%E5%8A%9B%E9%93%BE%E6%8E%A5">磁力链接</a> 维基百科<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_5">
+<sup>5</sup>. 节选自 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Internet_Download_Manager">Internet Download Manager</a> 维基百科<a href="#reffn_5" title="Jump back to footnote [5] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. 节选自 <a target="_blank" rel="noopener" href="https://www.internetdownloadmanager.cn/">IDM 中文官网</a><a href="#reffn_6" title="Jump back to footnote [6] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_7">
+<sup>7</sup>. 地址来源：<a target="_blank" rel="noopener" href="https://lrepacks.net/repaki-programm-dlya-interneta/56-internet-download-manager-repack.html">Internet Download Manager 6.40.11 (Repack)</a> Lrepacks<a href="#reffn_7" title="Jump back to footnote [7] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_8">
+<sup>8</sup>. 节选自 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Free_Download_Manager">Free Download Manager</a> 维基百科<a href="#reffn_8" title="Jump back to footnote [8] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_9">
+<sup>9</sup>. 节选自 <a target="_blank" rel="noopener" href="http://www.dayanzai.me/neat-download-manager.html">轻量级免费下载工具 Neat Download Manager 1.4.10 中文免费版</a> 大眼仔旭<a href="#reffn_9" title="Jump back to footnote [9] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_10">
+<sup>10</sup>. 讨论地址如下：<a target="_blank" rel="noopener" href="https://github.com/the1812/Bilibili-Evolved/discussions/3283">用 NDM 下载视频时提示 HTTP/1.1 403 Forbidden #3283</a> GitHub<a href="#reffn_10" title="Jump back to footnote [10] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_11">
+<sup>11</sup>. 节选自 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/BitComet">BitComet</a> 维基百科<a href="#reffn_11" title="Jump back to footnote [11] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_12">
+<sup>12</sup>. 节选自 <a target="_blank" rel="noopener" href="http://www.bitcomet.com/cn/features">为什么选择 BitComet (比特彗星) ？</a> 比特彗星<a href="#reffn_12" title="Jump back to footnote [12] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_13">
+<sup>13</sup>. 图片来源：<a target="_blank" rel="noopener" href="https://trackerslist.com/#/zh?id=bitcomet-%e6%af%94%e7%89%b9%e5%bd%97%e6%98%9f">BitComet（比特彗星）</a> TrackersList<a href="#reffn_13" title="Jump back to footnote [13] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_14">
+<sup>14</sup>. 节选自 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Aria2">Aria2</a> 维基百科<a href="#reffn_14" title="Jump back to footnote [14] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_15">
+<sup>15</sup>. 节选自 <a target="_blank" rel="noopener" href="http://ariang.mayswind.net/zh_Hans/">AriaNG</a><a href="#reffn_15" title="Jump back to footnote [15] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_16">
+<sup>16</sup>. 节选自 <a target="_blank" rel="noopener" href="https://aria-ng.xmader.com/#/README">AriaNG GUI</a><a href="#reffn_16" title="Jump back to footnote [16] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_17">
+<sup>17</sup>. 节选自 <a target="_blank" rel="noopener" href="https://github.com/Tampermonkey/tampermonkey">Tampermonkey / tampermonkey</a> GitHub，原文为：“Tampermonkey is the most popular userscript manager, with over 10 million users. It’s available for Chrome, Microsoft Edge, Safari, Opera Next, and Firefox.”<a href="#reffn_17" title="Jump back to footnote [17] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_18">
+<sup>18</sup>. Issue 的地址如下：<a target="_blank" rel="noopener" href="https://github.com/the1812/Bilibili-Evolved/issues/900">暴力猴上安装不了（可能是浏览器太垃圾？） #900</a> Github<a href="#reffn_18" title="Jump back to footnote [18] in the text."> &#8617;</a>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/23/%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91Markdown%E8%AF%AD%E6%B3%95%E5%A4%A7%E5%85%A8/" rel="prev" title="【转载】Markdown语法大全">
+      <i class="fa fa-chevron-left"></i> 【转载】Markdown语法大全
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/09/%E5%B9%B3%E9%9D%A2%E5%90%91%E9%87%8F%E4%B9%8BBenz%E5%AE%9A%E7%90%86/" rel="next" title="平面向量之 Benz 定理">
+      平面向量之 Benz 定理 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%BC%E8%AF%AD"><span class="nav-text">导语</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BD%E6%96%B9%E5%BC%8F"><span class="nav-text">1. 下载方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-HTTP-%E5%92%8C-HTTPS"><span class="nav-text">1.1 HTTP 和 HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-HTTP"><span class="nav-text">1.1.1 HTTP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-HTTPS"><span class="nav-text">1.1.2 HTTPS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-BitTorrent"><span class="nav-text">1.2 BitTorrent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Magnet"><span class="nav-text">1.3 Magnet</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E4%B8%8B%E8%BD%BD%E5%99%A8"><span class="nav-text">2. 下载器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-IDM-FDM-NDM"><span class="nav-text">2.1 IDM &#x2F; FDM &#x2F; NDM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-IDM"><span class="nav-text">2.1.1 IDM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-1-%E4%BB%8B%E7%BB%8D"><span class="nav-text">2.1.1.1 介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-2-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">2.1.1.2 使用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-3-%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="nav-text">2.1.1.3 常用功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-FDM"><span class="nav-text">2.1.2 FDM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-1-%E4%BB%8B%E7%BB%8D"><span class="nav-text">2.1.2.1 介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-2-%E4%B8%8D%E8%B6%B3%E4%B9%8B%E5%A4%84"><span class="nav-text">2.1.2.2 不足之处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-NDM"><span class="nav-text">2.1.3 NDM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-3-1-%E4%BB%8B%E7%BB%8D"><span class="nav-text">2.1.3.1 介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-3-2-%E4%B8%8D%E8%B6%B3%E4%B9%8B%E5%A4%84"><span class="nav-text">2.1.3.2 不足之处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-4-%E4%B8%89%E7%A7%8D%E4%B8%8B%E8%BD%BD%E5%99%A8%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-text">2.1.4 三种下载器的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-BitComet"><span class="nav-text">2.2 BitComet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-%E4%BB%8B%E7%BB%8D"><span class="nav-text">2.2.1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">2.2.2 使用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Aria2"><span class="nav-text">2.3 Aria2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Aria2"><span class="nav-text">2.3.1 Aria2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-AriaNG-GUI"><span class="nav-text">2.3.2 AriaNG GUI</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E7%89%B9%E6%AE%8A%E4%B8%8B%E8%BD%BD"><span class="nav-text">3. 特殊下载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90"><span class="nav-text">3.1 影视资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-%E5%90%84%E5%A4%A7%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99"><span class="nav-text">3.1.1 各大视频网站</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-1-Tampermonkey-%E5%92%8C-Greasy-Fork"><span class="nav-text">3.1.1.1 Tampermonkey 和 Greasy Fork</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-2-%E6%87%92%E4%BA%BA%E8%84%9A%E6%9C%AC"><span class="nav-text">3.1.1.2 懒人脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-3-Bilibili-Evolved"><span class="nav-text">3.1.1.3 Bilibili-Evolved</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E8%AF%B4%E6%98%8E%E5%92%8C%E6%80%BB%E7%BB%93"><span class="nav-text">4. 说明和总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E5%BC%95%E7%94%A8%E8%B5%84%E6%96%99%E5%92%8C%E8%84%9A%E6%B3%A8"><span class="nav-text">5. 引用资料和脚注</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="孙君阁"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">孙君阁</p>
+  <div class="site-description" itemprop="description">孙君阁的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SunJunge08" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SunJunge08" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kinopico@qq.com" title="E-Mail → mailto:kinopico@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+      
+      <div>
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1822800446&auto=0&height=66"></iframe>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">孙君阁</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">48k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">44 分钟</span>
+</div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/undefined/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+    </div>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

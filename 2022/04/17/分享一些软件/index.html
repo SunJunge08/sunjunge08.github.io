@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!--pjax：防止跳转页面音乐暂停-->
+ <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunjunge08.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#836FFF","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"all.xml"};
+  </script>
+
+  <meta name="description" content="写在前面 &#x2F; Introduction 这篇文章的作用是对我所使用的一些软件进行备份，以便于更换设备时快速下载到这些软件。本篇文章持续更新。  使用声明（转载自脚本之家）：  根据二〇〇二年一月一日《计算机软件保护条例》规定：为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬！鉴于此，也希望大家按此说明研究软件！谢谢。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分享一些软件">
+<meta property="og:url" content="https://sunjunge08.github.io/2022/04/17/%E5%88%86%E4%BA%AB%E4%B8%80%E4%BA%9B%E8%BD%AF%E4%BB%B6/index.html">
+<meta property="og:site_name" content="孙君阁的博客">
+<meta property="og:description" content="写在前面 &#x2F; Introduction 这篇文章的作用是对我所使用的一些软件进行备份，以便于更换设备时快速下载到这些软件。本篇文章持续更新。  使用声明（转载自脚本之家）：  根据二〇〇二年一月一日《计算机软件保护条例》规定：为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬！鉴于此，也希望大家按此说明研究软件！谢谢。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-17T03:17:01.000Z">
+<meta property="article:modified_time" content="2023-02-09T06:09:29.583Z">
+<meta property="article:author" content="孙君阁">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://sunjunge08.github.io/2022/04/17/%E5%88%86%E4%BA%AB%E4%B8%80%E4%BA%9B%E8%BD%AF%E4%BB%B6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>分享一些软件 | 孙君阁的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">孙君阁的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Kinopico</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/SunJunge08" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sunjunge08.github.io/2022/04/17/%E5%88%86%E4%BA%AB%E4%B8%80%E4%BA%9B%E8%BD%AF%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="孙君阁">
+      <meta itemprop="description" content="孙君阁的博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙君阁的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          分享一些软件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-4-17 11:17:01" itemprop="dateCreated datePublished" datetime="2022-04-17T11:17:01+08:00">2022-4-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-2-9 14:09:29" itemprop="dateModified" datetime="2023-02-09T14:09:29+08:00">2023-2-9</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">分享</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>15k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>14 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="写在前面-Introduction"><a href="#写在前面-Introduction" class="headerlink" title="写在前面 / Introduction"></a>写在前面 / Introduction</h2><ol>
+<li><p>这篇文章的作用是对我所使用的一些软件进行备份，以便于更换设备时快速下载到这些软件。本篇文章持续更新。</p>
+</li>
+<li><p>使用声明（转载自<a target="_blank" rel="noopener" href="https://www.jb51.net/">脚本之家</a>）：</p>
+<blockquote>
+<p>根据二〇〇二年一月一日《计算机软件保护条例》规定：为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬！鉴于此，也希望大家按此说明研究软件！谢谢。</p>
+</blockquote>
+</li>
+</ol>
+<span id="more"></span>
+<h2 id="注意事项-Notice"><a href="#注意事项-Notice" class="headerlink" title="注意事项 / Notice"></a>注意事项 / Notice</h2><ol>
+<li><p>为了获得更快的下载速度，建议在下载前使用 IDM (Internet Download Manager) 下载文件。具体使用方法见下文。如果有的链接失效，可以到文章的“下载地址”部分获取存放在 <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a> 的备用下载地址。</p>
+</li>
+<li><p>对于同一个软件，可能会提供多个版本。这时可以根据自己的喜好和需求选择相应的版本下载。例如：即下即用可以选择绿色版本；长期使用可以选择安装版本。</p>
+</li>
+<li><p>“正文部分”中的软件按照首字母（或拼音首字母）的正序排列，可以通过网页左侧的“文章目录”快速找到需要的软件。也可以按 Ctrl+F 输入关键词查找。</p>
+</li>
+<li><p>对于破解软件，最好不要进行更新，否则容易使软件的功能失效。一般地，本文章中带有版本号的软件是破解版或修改版。</p>
+</li>
+</ol>
+<h2 id="正文部分-Software-List"><a href="#正文部分-Software-List" class="headerlink" title="正文部分 / Software List"></a>正文部分 / Software List</h2><h3 id="A"><a href="#A" class="headerlink" title="A"></a>A</h3><p><strong>Adobe Acrobat DC 2020 Vposy 破解版（688MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="http://www.123pan.com/s/bjcA-Vlzw">http://www.123pan.com/s/bjcA-Vlzw</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="https://sub.cm/d3o6D95">https://sub.cm/d3o6D95</a></p>
+<p>下载地址3：<a target="_blank" rel="noopener" href="http://inx.lv/FWby">http://inx.lv/FWby</a></p>
+<p>Adobe系列软件：<a target="_blank" rel="noopener" href="https://docs.qq.com/doc/DYXBrdmhIa0pTakZu">https://docs.qq.com/doc/DYXBrdmhIa0pTakZu</a></p>
+</blockquote>
+<p>很好用的 PDF 阅读器和编辑器，也是我默认使用的 PDF 处理软件。可以在“工具”一栏获取更多实用工具，例如注释、图章、优化 PDF 等。</p>
+<p><strong>Adobe Photoshop 2020 Vposy 破解版（1.76GB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="http://www.123pan.com/s/bjcA-jlzw">http://www.123pan.com/s/bjcA-jlzw</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="http://inx.lv/FWbY">http://inx.lv/FWbY</a></p>
+<p>下载地址3：<a target="_blank" rel="noopener" href="http://inx.lv/FWbB">http://inx.lv/FWbB</a></p>
+</blockquote>
+<p>大名鼎鼎的 PS，我想我应该不需要过多介绍了。</p>
+<p><strong>阿里云盘 / aDrive（91.6MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://yunpan.aliyun.com/downloads/apps/desktop/aDrive.exe">https://yunpan.aliyun.com/downloads/apps/desktop/aDrive.exe</a></p>
+</blockquote>
+<p>目前来看是一个良心产品，下载不限速。至于以后怎么样就不好说了，反正能用一天是一天。</p>
+<p><strong>按键精灵2014（23.0MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://download.myanjian.com/">http://download.myanjian.com/</a></p>
+</blockquote>
+<p>可以记录键鼠的运动状态并录制下来，对于一些简单枯燥重复无脑的工作很好用。</p>
+<p><strong>遨游浏览器5 / Maxthon 5（63.2MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.maxthon.cn/mx6/history/">https://www.maxthon.cn/mx6/history/</a></p>
+</blockquote>
+<p>支持 Flash 播放。嗯，这可能是我使用它唯一的原因吧。</p>
+<p><strong>Apowersoft Video Editor Pro v1.1.8 绿色版（51.7MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/iP9Qsn9hlje">https://axu.lanzoui.com/iP9Qsn9hlje</a></p>
+</blockquote>
+<p>用于视频剪辑，之前用过一段时间。特点是易于上手，好操作，不像 Pr 那样让人眼花缭乱。</p>
+<p><strong>Aria2NG v1.36.0（2.29MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/aria2/aria2/releases">https://github.com/aria2/aria2/releases</a></p>
+</blockquote>
+<p>多线程下载工具，可以配合 <a target="_blank" rel="noopener" href="https://baidu.kinh.cc/">KinhDown 网页端</a> 下载度盘文件。</p>
+<p><strong>AxMath v2.5 破解版（10.0MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://suo.st/asIkqYh">https://suo.st/asIkqYh</a></p>
+</blockquote>
+<p>用来编辑数学公式，比 MathType 更方便一些，可以转换为 LaTeX 代码。</p>
+<h3 id="B"><a href="#B" class="headerlink" title="B"></a>B</h3><p><strong>Bandicam v5.2.1.1860 破解版（23.2MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/irOohtgpu7c">https://axu.lanzoui.com/irOohtgpu7c</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="https://pan.bilnn.com/s/vwlmSm">https://pan.bilnn.com/s/vwlmSm</a></p>
+<p>录屏软件：<a target="_blank" rel="noopener" href="https://docs.qq.com/doc/DYXd5dEFVRHZzVEdx">https://docs.qq.com/doc/DYXd5dEFVRHZzVEdx</a></p>
+</blockquote>
+<p>视频录制软件，可以自定义窗口大小，还可以在录制过程中对画面进行各种标记，例如划线等。</p>
+<p><strong>Bandizip v7.12 破解版（11.2MB）——重要</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/ivyKLp6i81i">https://axu.lanzoui.com/ivyKLp6i81i</a></p>
+<p>其他版本：<a target="_blank" rel="noopener" href="https://docs.qq.com/doc/DYWxSa3BEc2ZvUWZv">https://docs.qq.com/doc/DYWxSa3BEc2ZvUWZv</a></p>
+</blockquote>
+<p>（解）压缩软件，请务必使用此软件作为默认（解）压缩软件，否则可能无法打开文中的一些分卷压缩包。</p>
+<p><strong>必剪 / Bcut（215MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://bcut.drawyoo.com/">https://bcut.drawyoo.com/</a></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/">B站</a> 出的一款视频剪辑软件。与上文提到的 Apowersoft Video Editor Pro 相比，它有丰富的资源库，可以供 UP 主进行创作，最重要的是它能直接绑定 B站 账号，剪辑投稿一条龙<del>，还能领限时奖励</del>。但是在使用过程中，必剪经常崩溃，好在有自动保存功能，不然就悲剧了，不知道新版本有没有修复这个问题。</p>
+<p><strong>BitComet / 比特彗星 v1.78 隐藏功能解锁版（26.9MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://wwx.lanzoux.com/iGN19sfji9e">https://wwx.lanzoux.com/iGN19sfji9e</a></p>
+</blockquote>
+<p>比特种子下载器，这个版本自带了常用服务器，能大幅度提高下载速度。</p>
+<p><strong>BlackBird-Player / 黑鸟播放器（45.5MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://guihet.com/blackbird-player.html">https://guihet.com/blackbird-player.html</a></p>
+</blockquote>
+<p>新发现的 TV 观看软件，可以观看全国各地的大部分电视台，支持手动添加播放源。此外还可以观看国外的某些电视台，<del>甚至可以看 CNN 的 “Fake News”，</del>总体来说还是很强大的。</p>
+<h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><p><strong>CCleaner Professional v5.90.9443 x64 中文注册便携版（11.4MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://axu.lanzouj.com/iaWZX00pgwqf">https://axu.lanzouj.com/iaWZX00pgwqf</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="http://inx.lv/FWoV">http://inx.lv/FWoV</a></p>
+<p>系统优化：<a target="_blank" rel="noopener" href="https://docs.qq.com/doc/DYVN2eW1KV2pjc3Zp">https://docs.qq.com/doc/DYVN2eW1KV2pjc3Zp</a></p>
+</blockquote>
+<p>清理磁盘空间用的，对于磁盘空间小的（尤其是 C 盘不够用的）电脑，清理能力还是很强大的。注意谨慎使用，不要在浏览器那里把一些重要信息给删掉了。所以磁盘够用的电脑就不要随便清理了，容易出事。</p>
+<p><strong>城通网盘（487KB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://imgstatic.ctfile.com/upload/apps/ctfile.exe">https://imgstatic.ctfile.com/upload/apps/ctfile.exe</a></p>
+</blockquote>
+<p>一个历史悠久的网盘。特点是文件非常小时（一般不超过几 MB 时），下载速度能达到满速。但是文件很大的时候（比如几百 MB 时）就只能达到 0.3 Mbps 的速度。以上结果是我在 2020 年测试得到的。后来没怎么用过城通网盘，也不知道现在的速度什么样。</p>
+<h3 id="D"><a href="#D" class="headerlink" title="D"></a>D</h3><p><strong>D8Ecap（196KB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://down2.opdown.com:8019/opdown/D8Ecap.exe.zip">http://down2.opdown.com:8019/opdown/D8Ecap.exe.zip</a></p>
+</blockquote>
+<p>如果你的电脑需要外接摄像头，那就一点要安装 D8Ecap，这其实是电脑自带的一款软件，但是在某些精简版的系统中没有。这就导致插上了摄像头但是没法用。此外，安装 D8Ecap 后可以通过命令提示符打开它。</p>
+<p><strong>单文件软件制作工具（7.48MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/iJTsKn9fwcb">https://axu.lanzoui.com/iJTsKn9fwcb</a></p>
+</blockquote>
+<p>顾名思义就是把一款软件打包为一个 exe 文件的工具，适用于一些即开即用的小工具。</p>
+<p><strong>Defender Control v2.0（447KB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.sordum.org/9480/defender-control-v2-0/">https://www.sordum.org/9480/defender-control-v2-0/</a></p>
+</blockquote>
+<p>可以关掉垃圾 Windows 系统自带的 Windows Defender，让它永远不要弹出来。Windows 8 以下的用户可忽视，因为这个东西只存在于 Win8，Win10 以及 Win11 中。</p>
+<p><strong>钉钉 / DingTalk（5.21MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://inx.lv/FWoR">http://inx.lv/FWoR</a></p>
+</blockquote>
+<p>不用我介绍了吧，天天用。</p>
+<p><strong>Dopamine（33.7MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.digimezzo.com/content/software/dopamine/">https://www.digimezzo.com/content/software/dopamine/</a></p>
+</blockquote>
+<p>本地听歌软件，能满足基本的听歌需求，还能对歌曲的信息加以编辑。例如添加歌词，添加封面，添加作者信息和专辑信息等。</p>
+<h3 id="E"><a href="#E" class="headerlink" title="E"></a>E</h3><p><strong>EduEditer（45.5MB）</strong></p>
+<blockquote>
+<p>下载地址1（v1.99）：<a target="_blank" rel="noopener" href="http://eduediter.com/download_page/">http://eduediter.com/download_page/</a></p>
+<p>下载地址2（v2.00 20220402发行版）：<a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/newtag8/EduEditer_V2.00_202200402_.exe">https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/newtag8/EduEditer_V2.00_202200402_.exe</a></p>
+</blockquote>
+<p>这款软件很特别，因为它的 v2.00 版本只在官方 QQ 群（群号：4960938）发布，而且更新频率很快，想体验最新版可以到群里获取。</p>
+<h3 id="F"><a href="#F" class="headerlink" title="F"></a>F</h3><p><strong>FastStone Capture v9.7（5.17MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://www.faststonesoft.net/DN/FSCaptureSetup97.exe">https://www.faststonesoft.net/DN/FSCaptureSetup97.exe</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="https://xiaoming.lanzoui.com/b0f8tl0sh#gwld">https://xiaoming.lanzoui.com/b0f8tl0sh#gwld</a></p>
+<p>注册名：microsoft</p>
+<p>注册码：DPRME-IMDFA-NTTVW-CFRQS</p>
+</blockquote>
+<p>截屏软件，支持长截屏。我之前的好几篇文章的预览都是用 FSCapture 截的。</p>
+<p><strong>FastStone Image Viewer v7.6（6.63MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://www.faststonesoft.net/DN/FSViewerSetup76.exe">http://www.faststonesoft.net/DN/FSViewerSetup76.exe</a></p>
+<p>注册名：zdfans</p>
+<p>注册码：TZGZGZUZ-NQERZDQP-QVGA</p>
+</blockquote>
+<p>看图软件，可以批量对图片进行操作。</p>
+<p><strong>Foxit PDF Editor v2.2.1 汉化单文件版（4.52MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/iQwsggx7rad">https://axu.lanzoui.com/iQwsggx7rad</a></p>
+</blockquote>
+<p>PDF 编辑器，比 Adobe Acrobat DC 的功能多一些。</p>
+<p><strong>FreeGate（6.85MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://dongtaiwang.com/loc/software/fg/797/fg797p.zip">http://dongtaiwang.com/loc/software/fg/797/fg797p.zip</a></p>
+</blockquote>
+<p>魔法上网软件，懂的都懂。上面的下载地址也需要魔法，所以需要的可以到文章末尾的 下载地址 一栏进行下载。</p>
+<h3 id="G"><a href="#G" class="headerlink" title="G"></a>G</h3><p><strong>GeoGebra 经典 6（94.3MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.geogebra.org/download">https://www.geogebra.org/download</a></p>
+</blockquote>
+<p>几何画图软件，功能强大。此版本为应用捆绑包, 包含几何, 表格, 概率和 CAS 等功能。</p>
+<p><strong>格式工厂 / Format Factory（105MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://www.pcgeshi.com/download.html">http://www.pcgeshi.com/download.html</a></p>
+</blockquote>
+<p>一款免费多功能的多媒体格式转换软件。注意在安装和更新时不要选择捆绑软件。</p>
+<p><strong>Git（47.9MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+</blockquote>
+<p>Git 是一个免费和开源的分布式版本控制系统，旨在快速高效地处理从小型项目到大型项目的所有项目。</p>
+<p><strong>GrafEq v2.13（1.36MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://suo.yt/4wHQDUa">https://suo.yt/4wHQDUa</a></p>
+</blockquote>
+<p>读作“Graphic [ˈɡræfɪk]”，它的功能只有一个：作出形如 $x^2+y^2=1$ 的二元等式或者不等式的图像。令人惊叹的是，这个软件的图像绘制能力异常强大，Mathematica 等大型专业数学软件完全不是它的对手。</p>
+<p><strong>Graphing Calculator 3D（36.2MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.runiter.com/graphing-calculator/download.htm">https://www.runiter.com/graphing-calculator/download.htm</a></p>
+</blockquote>
+<p>与 GrafEq 类似，但它是画 3D 图像的。</p>
+<h3 id="H"><a href="#H" class="headerlink" title="H"></a>H</h3><p><strong>HD Video Converter Factory Pro v18.4（83.6MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://sub.cm/ULjGnII">https://sub.cm/ULjGnII</a></p>
+</blockquote>
+<p>一款视频工具箱，和格式工厂差不多。</p>
+<p><strong>Honeyview / 蜂蜜浏览器（7.69MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.bandisoft.com/honeyview/">https://www.bandisoft.com/honeyview/</a></p>
+</blockquote>
+<p>Honeyview 是一款快速的图片查看器。优点主要有：可以显示包括 GPS 信息在内的 JPEG 格式的 EXIF 信息；对图像格式进行批量转换和调整大小；支持显示 GIF 和 WebP 动图；无需解压即可直接查看压缩包中的图像。</p>
+<h3 id="I"><a href="#I" class="headerlink" title="I"></a>I</h3><p><strong>IgorWare Hasher（118KB）——重要</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.igorware.com/hasher/download">https://www.igorware.com/hasher/download</a></p>
+</blockquote>
+<p>用于计算文件的哈希值，也可以进行校验。</p>
+<p><strong>Internet Download Manager v6.40.11（15.5MB）——重要</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://axu.lanzouj.com/ivvHF04cec2f">https://axu.lanzouj.com/ivvHF04cec2f</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="http://inx.lv/rq8p">http://inx.lv/rq8p</a></p>
+</blockquote>
+<p>多线程下载工具，可以大大提高下载速度。</p>
+<p><strong>IObit Uninstaller 便携绿色版（34.0MB）——重要</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/ic9ha6j">https://axu.lanzoui.com/ic9ha6j</a></p>
+</blockquote>
+<p>卸载软件的软件，能够清除掉软件卸载后遗留下来的注册表信息。</p>
+<h3 id="J"><a href="#J" class="headerlink" title="J"></a>J</h3><p><strong>Java（81.9MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.java.com/zh-CN/download/">https://www.java.com/zh-CN/download/</a></p>
+</blockquote>
+<p>我装这个倒不是为了编程，主要是作为运行库来使用。有的软件的运行环境就是 Java。</p>
+<h3 id="K"><a href="#K" class="headerlink" title="K"></a>K</h3><p><strong>KinhDown（17.4MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://kinhdown.com/?Type=APPS">https://kinhdown.com/?Type=APPS</a></p>
+</blockquote>
+<p>度盘下载工具，现在看来很稳定，短时间内不会挂。关于度盘下载我以后可能会单独写一篇文章讲一讲。</p>
+<h3 id="L"><a href="#L" class="headerlink" title="L"></a>L</h3><h3 id="M"><a href="#M" class="headerlink" title="M"></a>M</h3><p><strong>MathType v7.4.4.516（41.4MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://sub.cm/NLtEYb8">https://sub.cm/NLtEYb8</a></p>
+</blockquote>
+<p>用于编辑数学公式。虽然不如上面的 AxMath 好用，但是它普及率高，几乎大部分的文档都是用 MathType 写公式。而且 MathType 公式可以在 EduEditer 中自动转为 EE 的公式，而 AxMath 不能。</p>
+<p><strong>MemReduct（309KB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.henrypp.org/product/memreduct">https://www.henrypp.org/product/memreduct</a></p>
+</blockquote>
+<p>系统清理工具，电脑卡的时候可以加加速。</p>
+<p><strong>Microsoft Edge（1.76MB）——重要</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/edge#platform">https://www.microsoft.com/zh-cn/edge#platform</a></p>
+</blockquote>
+<p>浏览器，性能还可以。</p>
+<h3 id="N"><a href="#N" class="headerlink" title="N"></a>N</h3><p><strong>Node.js（27.1MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">https://nodejs.org/zh-cn/download/</a></p>
+</blockquote>
+<p>写博客用的，因为 Hexo 基于 Node.js 之上。</p>
+<h3 id="O"><a href="#O" class="headerlink" title="O"></a>O</h3><p><strong>OBS Studio（112MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://obsproject.com/download">https://obsproject.com/download</a></p>
+</blockquote>
+<p>屏幕录制软件，比 Bandicam 更高级一些。</p>
+<p><strong>Office 2016 四合一 精简版（157MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://pan.bilnn.cn/s/rDv7Ta">https://pan.bilnn.cn/s/rDv7Ta</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="https://axu.notion.site/Office2016-7z-816a88d0c6924515a2b6ad2a2ef1ff5b">https://axu.notion.site/Office2016-7z-816a88d0c6924515a2b6ad2a2ef1ff5b</a></p>
+<p>下载地址3：<a target="_blank" rel="noopener" href="https://axutongxue.coding.net/s/99f4ce8c-67c3-437f-9680-6b6beb08f3e4">https://axutongxue.coding.net/s/99f4ce8c-67c3-437f-9680-6b6beb08f3e4</a></p>
+<p>Office 完整版：<a target="_blank" rel="noopener" href="https://txt.fyi/-/2294/b3da8dfa/">https://txt.fyi/-/2294/b3da8dfa/</a></p>
+</blockquote>
+<p>经典四件套，众人皆知。</p>
+<h3 id="P"><a href="#P" class="headerlink" title="P"></a>P</h3><p><strong>Pandoc v2.18（23.0MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/jgm/pandoc/releases">https://github.com/jgm/pandoc/releases</a></p>
+</blockquote>
+<p>一个文件转换程序，例如可以把 MarkDown 文件转换为 Doc 文件。</p>
+<p><strong>PDF Password Remover v3.1 汉化单文件版（1.54MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/i5Uiugx7r7a">https://axu.lanzoui.com/i5Uiugx7r7a</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="https://shandianpan.com/f/37nO">https://shandianpan.com/f/37nO</a></p>
+</blockquote>
+<p>这款软件十分强悍，能去除加密 PDF 的密码，但是只能导出无密码的 PDF 文件，并不能知道密码是什么。这也告诉我们，加密 PDF 文件时不要加密码，这样根本没用。最好是直接把文字转为矢量图，从而限制编辑。当然，在 OCR 面前，这样的加密仍然没什么作用。</p>
+<p><strong>PDF Watermark Remover（2.56MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/izIIGgx7u2d">https://axu.lanzoui.com/izIIGgx7u2d</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="https://shandianpan.com/f/37nP">https://shandianpan.com/f/37nP</a></p>
+</blockquote>
+<p>可以去除 PDF 文件中的水印，不过只能去除固定位置且不遮挡文件内容的水印。</p>
+<p><strong>PDF橡皮擦 v1.9.4.4 英文破解单文件版（8.02MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/i9ltTgx7qfc">https://axu.lanzoui.com/i9ltTgx7qfc</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="https://shandianpan.com/f/37nT">https://shandianpan.com/f/37nT</a></p>
+</blockquote>
+<p>和 PDF Watermark Remover 差不多，这个更暴力一些，直接把选中区域的所有内容都去掉了。</p>
+<p><strong>PotPlayer（34.6MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/b069zj53i">https://axu.lanzoui.com/b069zj53i</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="https://shandianpan.com/f/3Axr">https://shandianpan.com/f/3Axr</a></p>
+</blockquote>
+<p>本地影音播放软件，还可以看直播。</p>
+<p><strong>Python（27.1MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></p>
+</blockquote>
+<p>主要还是用来充当运行库，我不拿它编程。</p>
+<h3 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h3><p><strong>Qalculate!（74.6MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/Qalculate/qalculate-gtk/releases">https://github.com/Qalculate/qalculate-gtk/releases</a></p>
+</blockquote>
+<p>高级计算器，用过才知道这东西有多强大。</p>
+<h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><p><strong>ReNamer（3.87MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://www.den4b.com/download/renamer/installer">http://www.den4b.com/download/renamer/installer</a></p>
+</blockquote>
+<p>文件批量重命名工具，操作简单。</p>
+<p><strong>RunningCheeseFirefox（90.5MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.runningcheese.com/firefox">https://www.runningcheese.com/firefox</a></p>
+</blockquote>
+<p>奶酪的 Firefox 增强版，我拿来作备用浏览器。</p>
+<h3 id="S"><a href="#S" class="headerlink" title="S"></a>S</h3><p><strong>Sketchpad（41.7MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://sub.cm/KcnhG1q">https://sub.cm/KcnhG1q</a></p>
+</blockquote>
+<p>几何画板，支持添加工具。作图比 Geogebra 强一些，但是没有 CAS 功能，作函数图像也不太方便。</p>
+<p><strong>Snipaste（15.1MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://zh.snipaste.com/download.html">https://zh.snipaste.com/download.html</a></p>
+</blockquote>
+<p>截图工具，微信和 QQ 自带的截图对于 Snipaste 来说就是弟中之弟。</p>
+<p><strong>搜狗输入法v9.6 去广告精简优化版（29.2MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/i98w2ja">https://axu.lanzoui.com/i98w2ja</a></p>
+</blockquote>
+<p>用了很多年了，感觉这个比较符合习惯，去广告版还是很纯净的。</p>
+<p><strong>soso music v1.0.0（47.6MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/i7mCJnddire">https://axu.lanzoui.com/i7mCJnddire</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="https://shandianpan.com/f/3Gpk">https://shandianpan.com/f/3Gpk</a></p>
+</blockquote>
+<p>音乐下载软件，支持网易云和 QQ 音乐，此外可以用咪咕的音源补充网易云没有版权的歌曲。重要的是可以下载歌词，这样就可以导入 Dopamine，实现本地听歌。</p>
+<p><strong>Speedtest（52.3MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.speedtest.net/apps/windows">https://www.speedtest.net/apps/windows</a></p>
+</blockquote>
+<p>测速软件，比网页端稳定，无广告。</p>
+<p><strong>SteamCommunity 302——重要（12.9MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.dogfight360.com/blog/686/">https://www.dogfight360.com/blog/686/</a></p>
+</blockquote>
+<p>上 GitHub 用的，使用反代加速，但是不等于梯子。</p>
+<h3 id="T"><a href="#T" class="headerlink" title="T"></a>T</h3><p><strong>Telegram（33.7MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://desktop.telegram.org/">https://desktop.telegram.org/</a></p>
+</blockquote>
+<p>国外的即时通讯软件，用起来很舒服。</p>
+<p><strong>腾讯会议 / TencentMeeting（139MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://meeting.tencent.com/download-center.html">https://meeting.tencent.com/download-center.html</a></p>
+</blockquote>
+<p>上课用的，懂的都懂。</p>
+<p><strong>腾讯QQ（154MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://im.qq.com/pcqq">https://im.qq.com/pcqq</a></p>
+</blockquote>
+<p>不用我介绍了吧……</p>
+<p><strong>ThunderS（9.90MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://suo.st/SsRz7Cm">https://suo.st/SsRz7Cm</a></p>
+</blockquote>
+<p>迅雷的一个版本，现在很难找到了，还好我及时做了备份。</p>
+<p><strong>天若OCR（15.6MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1549008-1-1.html">https://www.52pojie.cn/thread-1549008-1-1.html</a></p>
+</blockquote>
+<p>OCR 工具，目前很稳定。</p>
+<p><strong>Typora v0.11.18 beta（68.0MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://typora.io/windows/dev_release.html">https://typora.io/windows/dev_release.html</a></p>
+</blockquote>
+<p>MarkDown 编辑器，也是我写 Blog 用的编辑器。比 VSCode 用起来舒服，功能也更多。</p>
+<h3 id="U"><a href="#U" class="headerlink" title="U"></a>U</h3><p><strong>UsbEAm Hosts Editor（4.19MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.dogfight360.com/blog/475/">https://www.dogfight360.com/blog/475/</a></p>
+</blockquote>
+<p>和 SteamCommunity 302 是同一个作者，这个是改 Host 实现加速，有梯子的效果，但是现在不是很好用。</p>
+<h3 id="V"><a href="#V" class="headerlink" title="V"></a>V</h3><p><strong>Visual Studio Code（75.7MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></p>
+</blockquote>
+<p>微软的代码编辑器，支持安装扩展。</p>
+<h3 id="W"><a href="#W" class="headerlink" title="W"></a>W</h3><p><strong>万彩办公大师 / OfficeBox（12.1MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://www.wofficebox.com/ocr/">http://www.wofficebox.com/ocr/</a></p>
+</blockquote>
+<p>一个小工具箱。我用的最多的功能是 Word 文档转 PDF。</p>
+<p><strong>WeChatDownload v20200520（21.0MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://axu.lanzoui.com/iKkpQootn3i">https://axu.lanzoui.com/iKkpQootn3i</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="http://inx.lv/FWoP">http://inx.lv/FWoP</a></p>
+</blockquote>
+<p>下载微信文章的工具，支持批量下载。</p>
+<p><strong>微信 / WeChat（153MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://pc.weixin.qq.com/">https://pc.weixin.qq.com/</a></p>
+</blockquote>
+<p>不用我介绍了吧……</p>
+<p><strong>Wondershare PDFelement Professional v7.6.2.4929（82.2MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1231830-1-1.html">https://www.52pojie.cn/thread-1231830-1-1.html</a></p>
+</blockquote>
+<p>PDF 编辑器，用来与 Adobe Acrobat 互补。</p>
+<p><strong>WPS Office（218MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://platform.wps.cn/">https://platform.wps.cn/</a></p>
+</blockquote>
+<p>金山的 Office 软件，国内很多人都在用，但我主要还是用微软的三件套。</p>
+<p><strong>WxDatViewer（21.0MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1529348-1-1.html">https://www.52pojie.cn/thread-1529348-1-1.html</a></p>
+</blockquote>
+<p>微信图片解密工具。微信电脑端聊天记录中的图片是加密存储的，使用 WxDatViewer 可以解密查看并保存。</p>
+<h3 id="X"><a href="#X" class="headerlink" title="X"></a>X</h3><p><strong>小恐龙公文排版助手（2.38MB）</strong></p>
+<blockquote>
+<p>下载地址1：<a target="_blank" rel="noopener" href="https://xkonglong.lanzoux.com/b00dbbvcj">https://xkonglong.lanzoux.com/b00dbbvcj</a></p>
+<p>下载地址2：<a target="_blank" rel="noopener" href="https://xkonglong.ctfile.com/dir/15334738-33069050-810c82/">https://xkonglong.ctfile.com/dir/15334738-33069050-810c82/</a></p>
+</blockquote>
+<p>Word 的一个插件，排版人必备。</p>
+<h3 id="Y"><a href="#Y" class="headerlink" title="Y"></a>Y</h3><p><strong>YT4K Downloader v2.8.1（61.3MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1632038-1-1.html">https://www.52pojie.cn/thread-1632038-1-1.html</a></p>
+</blockquote>
+<p>YT4K Downloader 是开源视频下载器软件 yt-dlp（youtube-dl 的一个分支，yontube-dl 项目不再维护，而 yt-dlp 继续维护）的一个 UI 封装版本，完全免费，支持 Youtube、Bilibili、Vimeo 三个视频网站。支持各种清晰度文件下载。</p>
+<p><strong>YY开播 / YY Anchor（255MB）</strong></p>
+<blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://v.yy.com/">https://v.yy.com/</a></p>
+</blockquote>
+<p>即时的虚拟摄像头，具体有什么用自己摸索，我不多说。</p>
+<h3 id="Z"><a href="#Z" class="headerlink" title="Z"></a>Z</h3><h2 id="下载地址-Download-Link"><a href="#下载地址-Download-Link" class="headerlink" title="下载地址 / Download Link"></a>下载地址 / Download Link</h2><h3 id="下载前须知"><a href="#下载前须知" class="headerlink" title="下载前须知"></a>下载前须知</h3><p><strong>1.1</strong> 这一部分的内容是为了<strong>备份和保存软件的安装包</strong>而存在的，它的适用情况有：</p>
+<blockquote>
+<p>(1) 上文提到的下载地址失效；<br>(2) 上文提到的下载地址需要一定条件才能开始下载，而自身条件不允许；<br>(3) 认为上面的地址一个一个下载太麻烦，想要全部打包。</p>
+</blockquote>
+<p>否则的话，最好还是用上面的地址，因为有的软件还在持续更新，而这里备份的都是旧版本，并且一般不会再修改。</p>
+<p><strong>1.2</strong> 此外，为了获得更好的下载体验和更快的下载速度，请使用 <strong>Microsoft Edge</strong> 浏览器打开网页并使用 <strong>IDM</strong> 接管下载；为了确保文件的真实性，请使用 <strong>IgorWare Hasher</strong> 校验文件的 Hash 信息；为了能正常打开压缩文件，请使用 <strong>Bandizip</strong> 解压缩；如果你的机器中已经下载过此类软件并且想删掉原来的换成新的，请使用 <strong>IObit Uninstaller</strong> 卸载原有软件。这一段中提到的五个软件，在上文的文件名后都有“重要”的标注。它们的下载地址是：</p>
+<blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://junge08.lanzouu.com/ivHpp04wbwoj">https://junge08.lanzouu.com/ivHpp04wbwoj</a></strong><br><strong>密码：junge</strong></p>
+</blockquote>
+<p>安装好这五个软件后，就可以开始下载其他软件了。</p>
+<p><strong>1.3</strong> 补充：由于这篇文章经过了多次修改，上面的部分软件会有增添或修改的部分，具体情况在下文已经标注。</p>
+<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>这一部分是正式的下载内容，文件全部存放在 GitHub，共分为14个部分。字母表示以此字母开头的所有文件。点击文字即可下载。<strong>在“文件名一览”处，带有<del>删除线</del>的软件表示此软件已经不再被推荐或有更新，但仍然可以去 GitHub 下载。<font color=red>后续更新在 2.14 部分下载。</font></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/IMPORTANT.7z">2.1 重要软件</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>Bandizip_7.12_破解版.zip<br>igorware-hasher-x64.rar<br>inet_download_manager_6.40.11.zip<br>IObitUninstaller便携版.exe<br>MicrosoftEdgeSetup.exe</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: IMPORTANT.7z<br>Size: 38 MB (40,537,006 bytes)<br>SHA-1: 26eab051c19f62cc1af5cc9777d09f31583300d3<br>MD5: 78614cbe7a2283713d3fbc406f6146d9<br>CRC32: e49fac50</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/Acrobat_DC_C_2020.009.20063_SP_20200512.zip">2.2 Adobe Acrobat DC 2020 Vposy 破解版</a></strong></p>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: Acrobat_DC_C_2020.009.20063_SP_20200512.zip<br>Size: 688 MB (722,131,231 bytes)<br>SHA-1: 7bad2e7873b158f4e4ef9b842c6a5f4d68160491<br>MD5: 9c5134c7f4f8fe8fa1754ecef64e7527<br>CRC32: 423886ba</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/Photoshop_2020_21.2.4.323_ACR13.0_SP_20201011_2.rar">2.3 Adobe Photoshop 2020 Vposy 破解版</a></strong></p>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: Photoshop_2020_21.2.4.323_ACR13.0_SP_20201011_2.rar<br>Size: 1 GB (1,900,620,931 bytes)<br>SHA-1: 7298277b83ee7abc596aceeddf4f77c917d601c3<br>MD5: 3fe9a7e7c66fc462e9f5f296fdb8895c<br>CRC32: f2149d9c</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/A.7z">2.4 A</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>aDrive.exe<br>Apowersoft Video Editor Pro视频编辑王1.1.8绿版（右角设置语言）.zip<br>aria2-1.36.0-win-64bit-build1.zip<br>AxMath.2.5.zip<br>mx5.3.8.2000cn.exe<br>qm2014chs.exe</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: A.7z<br>Size: 240 MB (252,599,976 bytes)<br>SHA-1: af2a81831b93a8fa968dd8122e7e492c3322c913<br>MD5: e062a975e3740eecee75e099fc5f3596<br>CRC32: 0b480d5b</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/B-D.7z">2.5 B-D</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>Bandicam_v5.2.1.1860.7z<br>Bandizip_7.12_破解版.zip<br>Bcut-Win-beta1.4.0.exe<br>BlackBird-Player-1.9.0.zip<br>CCleaner Professional v5.90.9443 x64 中文注册便携版.7z<br>ctfile.exe<br>D8Ecap.exe.zip<br>dControl.zip<br>dingtalk_downloader.exe<br>Dopamine 2.0.9 (Release).msi<br>比特彗星(BitComet)-v1.78 隐藏功能解锁版.zip<br>单文件制作程序32位&amp;64位版.zip</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: B-D.7z<br>Size: 372 MB (390,505,214 bytes)<br>SHA-1: 9bc00cf0189a131a29a3ffa6b357b7447a86c487<br>MD5: c7d8d4a926ec23c218dc1fc585ff0740<br>CRC32: 1662c889</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/E-G.7z">2.6 E-G</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>EduEditer_V2.00_202200402_发行版.exe<br>EESetupR_V199.exe<br>fg797p.zip<br>FormatFactory_setup.exe<br>Foxit PDF Editor v2.2.1汉化单文件版.exe<br>FSCaptureSetup97.exe<br>FSViewerSetup76.exe<br>GeoGebra-Windows-Installer-6-0-694-0.exe<br>Git-2.35.1.2-64-bit.exe<br>grafeq_setup.exe<br>grapher.msi</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: E-G.7z<br>Size: 398 MB (417,713,913 bytes)<br>SHA-1: 1356e3efde61d3d5b40dcb48e00aa0a77de43a9c<br>MD5: 0c1e8d7d8589adce13738d6a599bbf0e<br>CRC32: 054a4d3b</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/H-N.7z">2.7 H-N</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>hd-video-converter-pro.7z<br>HONEYVIEW-SETUP.exe<br>jre-8u321-windows-x64.exe<br>KinhDown BaiDu Beta.exe<br>MathType.v7.4.4.516.zip<br>memreduct-3.4-setup.exe<br><del>NeatDM_setup.exe</del><br>node-v16.14.2-x64.msi</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: H-N.7z<br>Size: 253 MB (265,671,256 bytes)<br>SHA-1: 0db3ff6352ca8e8c01bc2c88e0f2f7025e1fafc6<br>MD5: fae563c6b7fff9e08f1396ea2f788521<br>CRC32: c1828e47</p>
+</blockquote>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p><strong>添加了 IDM 软件，地址在 2.14 部分。（2022.5.15）</strong></p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/O-P.7z">2.8 O-P</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>OBS-Studio-27.2.4-Full-Installer-x64.exe<br>Office2016四合一.7z<br>PDF-Watermark-Remover 注册码：PCDYS-S9Q4F-JAU7X-Q8AYG.exe<br>PDF Password Remover3.1汉化单文件版（PDF加密解除器）.exe<br>PDF橡皮擦1.9.4.4英文破解单文件版.exe<br>python-3.10.4-amd64.exe<br>Setup1.7.21147-Pub-x64.exe</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: O-P.7z<br>Size: 342 MB (358,986,501 bytes)<br>SHA-1: b1ad52599616b62bb054c544c94e171c09c33e6b<br>MD5: 2d2bcec0784e8609c270d8ef79b4b932<br>CRC32: 92f426ed</p>
+</blockquote>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p><strong>添加了 Pandoc 软件，地址在 2.14 部分。（2022.5.15）</strong></p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/Q-S.7z">2.9 Q-S</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>qalculate-4.1.1-x64.msi<br>renamer-7.3.exe<br>RunningCheeseFirefox.7z<br>Sketchpad.zip<br>Snipaste-2.7.3-Beta-x64.zip<br>soso music1.0.0.exe<br>speedtestbyookla_x64.msi<br>steamcommunity_302_V12.0.8.zip<br>搜狗输入法v9.6a(3568)去广告精简优化版.exe</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: Q-S.7z<br>Size: 358 MB (375,941,267 bytes)<br>SHA-1: 5487242ddc54bffd305f755fab1bca30bfd47ffe<br>MD5: 330635a75787f590ab63a5e26916e96d<br>CRC32: ffa5150c</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/T.7z">2.10 T</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>PCQQ2021.exe<br>TencentMeeting_0300000000_3.6.6.477.publish.exe<br>ThunderS.zip<br>tsetup-x64.3.6.1.exe<br>typora-update-x64-1117.exe<br>天若OCR文字识别_onnx.7z</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: T.7z<br>Size: 420 MB (441,031,243 bytes)<br>SHA-1: 68199708f45803280a71b21aeeaad35855f14845<br>MD5: 1841f07c9c86d22cc3da9da712f76676<br>CRC32: 24cad54a</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/U-V.7z">2.11 U-V</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>UsbEAm Hosts Editor v3.62.zip<br>VSCodeUserSetup-x64-1.66.2.exe</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: U-V.7z<br>Size: 79 MB (83,133,323 bytes)<br>SHA-1: 5ee36aa83562ff01362c4779f7a91cafabadac42<br>MD5: e4c4e7f59e9c8f7803f02ddefca7c462<br>CRC32: d51a8063</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/W.7z">2.12 W</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>OfficeBox_setup_v3.1.0.zip<br>WeChatSetup.exe<br>Wondershare PDFelement Professional 7.6.2.4929 Multilingual.7z<br>WPS-OfficeSetup(11636).exe<br>公众号文章批量下载 WeChatDownload v20200520.7z<br>微信dat图片批量转换_查看_导出工具－WxDatViewer 2.3_52PJ.rar</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: W.7z<br>Size: 488 MB (512,136,631 bytes)<br>SHA-1: 4b1d224527901d02acb06fa46925d9a196102dd6<br>MD5: 2c6e6a93f6443cefe1a20bd4d354b830<br>CRC32: 5400e8db</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/X-Z.7z">2.13 X-Z</a></strong></p>
+<p>文件名一览：</p>
+<blockquote>
+<p><del>yykaiboydj.rar</del><br>小恐龙公文排版助手1902 MSI版.zip</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: X-Z.7z<br>Size: 36 MB (38,517,349 bytes)<br>SHA-1: 6d11343f3e22fb164c4744d9827c6f94e555f76e<br>MD5: f36e1610f707e5c6843e3c9c17f48d6a<br>CRC32: 521236e0</p>
+</blockquote>
+<p><strong>注意：</strong></p>
+<blockquote>
+<p><strong>1. 添加了 YT4K Downloader 软件，地址在 2.14 部分。（2022.5.15）</strong><br><strong>2. YY Anchor 有更新，地址在 2.14 部分。（2022.5.15）</strong></p>
+</blockquote>
+<p><strong>2.14 后续补充</strong></p>
+<p><u><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/-v1.1-update.7z">2022年4月22日 v1.1更新</a></u></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>NeatDM.7z</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: -v1.1-update.7z<br>Size: 907 KB (929,203 bytes)<br>SHA-1: f970ad93834344332530bbbfd47efd21a3a6c6ef<br>MD5: 1e827d47710f8d38e0875336fcbd8176<br>CRC32: 7f6d78f1</p>
+</blockquote>
+<p><strong>注意：v1.1 更新中的全部文件都已作废，将不会再被使用，但仍然提供下载。</strong></p>
+<p><u><a target="_blank" rel="noopener" href="https://ghproxy.com/https://github.com/SunJunge08/sjg-blog/releases/download/software/-v1.2-update.7z">2022年5月15日 v1.2更新</a></u></p>
+<p>文件名一览：</p>
+<blockquote>
+<p>inet_download_manager_6.40.11.zip<br>pandoc-2.18-windows-x86_64.msi<br>YT4KDownloader_win_2.8.1.zip<br>YYAnchorSetup-1.38.0.0.exe</p>
+</blockquote>
+<p>文件信息：</p>
+<blockquote>
+<p>Name: -v1.2-update.7z<br>Size: 353 MB (370,762,992 bytes)<br>SHA-1: 8c4e37e78b788658a1495270c39165a1bb257cb1<br>MD5: d79050f8c57c1fd4df69b565ccbe1b77<br>CRC32: fdd715de</p>
+</blockquote>
+<h2 id="更新记录-Update-Log"><a href="#更新记录-Update-Log" class="headerlink" title="更新记录 / Update Log"></a>更新记录 / Update Log</h2><p>v1.0 at 2022/4/17 初稿基本完成。<br>v1.1 at 2022/4/22 删除1个软件，更新1个软件。<br>v1.2 at 2022/5/15 添加3个软件，删除1个软件，更新1个软件。</p>
+<hr>
+<p>早在今年二月份就想把这篇文章写出来，但是中间由于隔离和上课的原因没有完成，现在终于写好了。本篇文章持续更新。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/04/%E3%80%90%E9%AC%BC%E7%95%9C%E3%80%91%E8%84%B8%E9%83%BD%E4%B8%8D%E8%A6%81%E4%BA%86/" rel="prev" title="【鬼畜】脸都不要了">
+      <i class="fa fa-chevron-left"></i> 【鬼畜】脸都不要了
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/04/23/%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91Markdown%E8%AF%AD%E6%B3%95%E5%A4%A7%E5%85%A8/" rel="next" title="【转载】Markdown语法大全">
+      【转载】Markdown语法大全 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2-Introduction"><span class="nav-text">写在前面 &#x2F; Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9-Notice"><span class="nav-text">注意事项 &#x2F; Notice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E6%96%87%E9%83%A8%E5%88%86-Software-List"><span class="nav-text">正文部分 &#x2F; Software List</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A"><span class="nav-text">A</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B"><span class="nav-text">B</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C"><span class="nav-text">C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D"><span class="nav-text">D</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#E"><span class="nav-text">E</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F"><span class="nav-text">F</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G"><span class="nav-text">G</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H"><span class="nav-text">H</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I"><span class="nav-text">I</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J"><span class="nav-text">J</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K"><span class="nav-text">K</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L"><span class="nav-text">L</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#M"><span class="nav-text">M</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#N"><span class="nav-text">N</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#O"><span class="nav-text">O</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#P"><span class="nav-text">P</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q"><span class="nav-text">Q</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R"><span class="nav-text">R</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#S"><span class="nav-text">S</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T"><span class="nav-text">T</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#U"><span class="nav-text">U</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V"><span class="nav-text">V</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#W"><span class="nav-text">W</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#X"><span class="nav-text">X</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Y"><span class="nav-text">Y</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Z"><span class="nav-text">Z</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80-Download-Link"><span class="nav-text">下载地址 &#x2F; Download Link</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%89%8D%E9%A1%BB%E7%9F%A5"><span class="nav-text">下载前须知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="nav-text">下载地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95-Update-Log"><span class="nav-text">更新记录 &#x2F; Update Log</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="孙君阁"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">孙君阁</p>
+  <div class="site-description" itemprop="description">孙君阁的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/SunJunge08" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;SunJunge08" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kinopico@qq.com" title="E-Mail → mailto:kinopico@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+      
+      <div>
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1822800446&auto=0&height=66"></iframe>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">孙君阁</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">48k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">44 分钟</span>
+</div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/undefined/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+    <div id="pjax">
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+    </div>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
