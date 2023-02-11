@@ -854,6 +854,11 @@ pre .javascript .function {
 .post-body .note.danger h6 {
   color: #d9534f;
 }
+.pdfobject-container iframe,
+.pdfobject-container embed {
+  height: 1000px;
+  width: 100%;
+}
 .pagination .prev,
 .pagination .next,
 .pagination .page-number,
@@ -1291,7 +1296,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f5d7e4;
+  background: #af52ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2665,4 +2670,7 @@ mjx-container + br {
 }
 .links-of-blogroll-item {
   padding: 0;
+}
+.archive .collection-title {
+  display: none !important;
 }
